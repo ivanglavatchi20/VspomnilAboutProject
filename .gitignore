@@ -1,3 +1,5 @@
 .vs/
 x64/
-VspomnilAboutProject/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
