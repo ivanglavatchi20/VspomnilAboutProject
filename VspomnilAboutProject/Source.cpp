@@ -1,42 +1,40 @@
-#include <iostream>
-
+﻿#include <iostream>
 
 class Bank 
 {
 	
-	private:
+private:
 		
-		int AccNum = 0;
-		std::string Name = "dsa";
-		float Balance = 0;
+	const int AccNum {};
+	std::string Name {};
+	float Balance {};
 
-	public:
-		Bank(int AccNum, std::string Name, float Balance)
-		{
-			std::cout << Name << " is now a client." << std::endl;
-		}
+public:
+	Bank(int AccNum, std::string Name, float Balance) : AccNum(AccNum), Name(Name), Balance(Balance)
+	{
+		std::cout << Name << " is now a client." << std::endl;
+	}
 
-		~Bank()
-		{
-			std::cout << Name << " is not a client anymore." << std::endl;
-		}
+	~Bank()
+	{
+		std::cout << Name << " is not a client anymore." << std::endl;
+	}
 		
-		float toDeposit()
-		{
-			std::cout << "Write your payment" << std::endl;
-			float Payment; std::cin >> Payment;
-			Balance = this->Balance + Payment;
-			return Balance; 
-		}
+	float toDeposit()
+	{
+		std::cout << "Write your payment" << std::endl;
+		float Payment; std::cin >> Payment;
+		Balance = this->Balance + Payment;
+		return Balance; 
+	}
 
-		float toWithdraw()
-		{
-			std::cout << "Write the sum you are willing to withdraw" << std::endl;
-			float WithdrawSum; std::cin >> WithdrawSum;
-			Balance = this->Balance - WithdrawSum;
-			return Balance;
-		}
-
+	float toWithdraw()
+	{
+		std::cout << "Write the sum you are willing to withdraw" << std::endl;
+		float WithdrawSum; std::cin >> WithdrawSum;
+		Balance = this->Balance - WithdrawSum;
+		return Balance;
+	}
 };
 
 int main() 
@@ -54,7 +52,8 @@ int main()
 	short operationOperator; std::cin >> operationOperator;
 
 	if (operationOperator == 1) 
-	{
+	{	
+		
 		std::cout << "New balance is" << /*toWithdraw <<*/ std::endl;
 	}
 	else if (operationOperator == 2) 
@@ -64,6 +63,11 @@ int main()
 	else 
 	{
 	};
-	return 0;
+	//Картофельный ахерел в край. Его надо забанить.
 
+	Bank John(001, "John", 0);
+	Bank Michael(002, "Michael", 0);
+	Bank Jacob(003, "Jacob", 0);
+
+	return 0;
 }
